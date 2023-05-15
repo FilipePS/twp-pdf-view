@@ -428,5 +428,21 @@ See https://github.com/adobe-type-tools/cmap-resources
     <div id="printContainer"></div>
 
     <input type="file" id="fileInput" class="hidden">
+
+    <style>
+      /* Makes text with HTML markup appear */
+      .textLayer {
+        opacity: 1;
+      }
+      .textLayer span {
+        color: black;
+      }
+    </style>
+
+    <script>
+      /* Disable text rendering on canvas */
+      CanvasRenderingContext2D.prototype.strokeText = function () { };
+      CanvasRenderingContext2D.prototype.fillText = function () { };
+    </script>
   </body>
 </html>
